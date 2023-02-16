@@ -13,9 +13,15 @@ class CreateTableClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts.', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->text('name');
+            $table->string('birth');
+            $table->tinyInteger('type');
+
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +32,6 @@ class CreateTableClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts.');
+        Schema::dropIfExists('clients');
     }
 }
