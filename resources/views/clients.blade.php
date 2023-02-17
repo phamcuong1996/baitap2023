@@ -22,11 +22,11 @@
                             <label for="name">Năm Sinh (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                             <input class="form-control" type="text" name="birth" required>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Loại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                            <input class="form-control" type="text" name="type" required>
-                        </div>
-
+                        <select name="number" class="field" style="color: red; border: 1px solid blue" >
+                            <option value="">--Vui Lòng Chọn--</option>
+                            <option value="1" name="type">Tiệc Cho Công Ty</option>
+                            <option value="2" name="type">Tiệc Cho Gia Đình, Nhóm</option>
+                        </select>
                     </div>
                     <br>
                     <div class="card-footer">
