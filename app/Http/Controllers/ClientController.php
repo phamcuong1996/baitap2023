@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class ClientController extends Controller
 {
@@ -23,25 +24,21 @@ class ClientController extends Controller
         $money = 0;
 
         if (($year >= 18 AND ($request['type'] == 1))) {
-            $money += 400 + 400 * 5/100;
+            $money += 400000 + 400000 * 5/100;
         } elseif (($year < 18 and ($request['type'] == 1))) {
-            $money += 200;
+            $money += 200000;
         } elseif (($year >= 18 and ($request['type'] == 2))) {
-            $money += 500 + 500 * 5/100;
+            $money += 500000 + 500000 * 5/100;
         } else
-            $money +=200;
-        echo $money;
+            $money += 200000;
 
-//        if ($year >= 18) {
-//            echo "1";
-//        } else
-//            echo "2";
-//
-//        if ($request['type'] == 1 ) {
-//            echo "cong ty";
-//        } else {
-//            echo "gia dinh";
-//        }
+        $data['name'] = $request['name'];
+        $data['birth'] = $request['birth'];
+        $data['type'] = $request['type'];
+        $data['money'] = $money;
 
+        Client::create($data);
+
+        Return view('clients', compact('money'));
     }
 }

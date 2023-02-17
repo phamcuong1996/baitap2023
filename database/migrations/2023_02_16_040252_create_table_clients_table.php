@@ -18,6 +18,7 @@ class CreateTableClientsTable extends Migration
             $table->text('name');
             $table->string('birth');
             $table->tinyInteger('type');
+            $table->integer('money');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));

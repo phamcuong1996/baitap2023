@@ -15,5 +15,6 @@ class Client extends Model
         'name',
         'birth',
         'type',
+        'money',
     ];
 }

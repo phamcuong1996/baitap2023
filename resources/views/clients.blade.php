@@ -30,7 +30,8 @@
                     </div>
                     <br>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Thành Tiền</button>
+                        <h2>Giá tiền của quý khách là: {{ number_format($money) }}VNĐ</h2>
                     </div>
                 </div>
             </form>
