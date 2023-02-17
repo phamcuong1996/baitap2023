@@ -22,16 +22,25 @@
                             <label for="name">Năm Sinh (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                             <input class="form-control" type="text" name="birth" required>
                         </div>
-                        <select name="number" class="field" style="color: red; border: 1px solid blue" >
+                        <select name="type" class="field" style="color: red; border: 1px solid blue" >
                             <option value="">--Vui Lòng Chọn--</option>
                             <option value="1" name="type">Tiệc Cho Công Ty</option>
                             <option value="2" name="type">Tiệc Cho Gia Đình, Nhóm</option>
                         </select>
+                        <div class="form-group">
+                            <label for="name">Bàn (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                            <input class="form-control" type="text" name="group" required>
+                        </div>
                     </div>
                     <br>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Thành Tiền</button>
-                        <h2>Giá tiền của quý khách là: {{ number_format($money) }}VNĐ</h2>
+                    </div>
+                    <h2>Giá tiền của quý khách là: {{ number_format($money) }}VNĐ</h2>
+                    <div>
+                        <a class="btn btn-danger" href="/client/total">
+                            Tổng Tiền
+                        </a>
                     </div>
                 </div>
             </form>

@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/client/create', [ClientController::class, 'create'])->name('clients.create');
 Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
+
+//Route::get('/client/total', [ClientController::class, 'total'])->name('client.total');
+//Route::post('/client/store', [ClientController::class, 'totalStore'])->name('total.store');

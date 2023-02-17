@@ -10,8 +10,9 @@ class ClientController extends Controller
     public function create()
     {
         $clients = Client::all();
+        $money = 0;
 
-        return view('clients', compact('clients'));
+        return view('clients', compact('clients','money'));
     }
 
     public function store(Request $request)
@@ -36,9 +37,27 @@ class ClientController extends Controller
         $data['birth'] = $request['birth'];
         $data['type'] = $request['type'];
         $data['money'] = $money;
+        $data['group'] = $request['group'];
 
         Client::create($data);
 
         Return view('clients', compact('money'));
     }
+
+//    public function total()
+//    {
+//        return view('total');
+//    }
+//
+//    public function totalStore(Request $request)
+//    {
+//        $id = $request['group'];
+//        $clients = Client::where('group', $id)->get();
+//        foreach ($clients as $val) {
+//
+//
+//        }
+//
+//        return view('total');
+//    }
 }
