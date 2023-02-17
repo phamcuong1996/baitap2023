@@ -13,12 +13,8 @@ use App\Http\Controllers\ClientController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/client/create', [ClientController::class, 'create'])->name('clients.create');
+Route::get('/', [ClientController::class, 'create'])->name('clients.create');
 Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
 
-//Route::get('/client/total', [ClientController::class, 'total'])->name('client.total');
-//Route::post('/client/store', [ClientController::class, 'totalStore'])->name('total.store');
+Route::get('/client/total', [ClientController::class, 'total'])->name('client.total');
+Route::post('/total/store', [ClientController::class, 'totalStore'])->name('total.store');

@@ -21,6 +21,7 @@
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Thành Tiền</button>
                         </div>
+                        <h2>Tổng số tiền của quý khách là {{ number_format($total) }}VNĐ</h2>
                     </div>
             </form>
         </div>

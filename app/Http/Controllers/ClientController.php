@@ -44,20 +44,22 @@ class ClientController extends Controller
         Return view('clients', compact('money'));
     }
 
-//    public function total()
-//    {
-//        return view('total');
-//    }
-//
-//    public function totalStore(Request $request)
-//    {
-//        $id = $request['group'];
-//        $clients = Client::where('group', $id)->get();
-//        foreach ($clients as $val) {
-//
-//
-//        }
-//
-//        return view('total');
-//    }
+    public function total()
+    {
+        $total = 0;
+
+        return view('total', compact('total'));
+    }
+
+    public function totalStore(Request $request)
+    {
+        $id = $request['group'];
+        $clients = Client::where('group', $id)->get();
+        $total = 0;
+        foreach ($clients as $val) {
+            $total += $val['money'];
+        }
+
+        return view('total',compact('total'));
+    }
 }

@@ -39,7 +39,7 @@
                     <h2>Giá tiền của quý khách là: {{ number_format($money) }}VNĐ</h2>
                     <div>
                         <a class="btn btn-danger" href="/client/total">
-                            Tổng Tiền
+                            Thanh Toán Theo Bàn
                         </a>
                     </div>
                 </div>
